@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Homepage
+        </title>
+        <style>
+            table,
+            th,
+            td {
+              padding: 10px;
+              border: 1px solid black;
+              border-collapse: collapse;
+            }
+          </style>
+    </head>
+    <body>
+        <h1>Hi! Welcome to Django </h1>
+        <h2>Here are your Topics</h2>
+        <div class = "djangotwo">
+            {% if topics %}
+            <table>
+                <thead>
+                    <th>topic name</th>
+                    <th>reg details</th>
+                </thead>
+            
+            {% for acc in topics %}
+            <tr>
+                <td>
+                    {{acc.top_name }}
+                </td>
+                <td>{{acc.reg}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No topic names found</p>
+        {% endif %}
+        </div>
+    </body>
+</html>
